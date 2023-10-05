@@ -7,14 +7,20 @@ const pause = document.querySelector('.pause')
 
 var el = document.getElementById("music");
 function playAudio() { 
-  el.play();
-  pause.classList.remove('d-none');
-  play.classList.add('d-none');
+	var inputData = document.getElementById("inputData").value;
+	if (inputData.trim() === "") {
+		alert("Tolong Isi Nama Lengkap Anda Terlebih Dahulu!");
+	} else {
+		$('#exampleModal').modal('hide');
+		el.play();
+	}
+	pause.classList.remove('d-none');
+	play.classList.add('d-none');
 } 
 function pauseAudio() { 
-  el.pause();
-  pause.classList.add('d-none');
-  play.classList.remove('d-none');
+	el.pause();
+	pause.classList.add('d-none');
+	play.classList.remove('d-none');
 } 
 
 ;(function () {
