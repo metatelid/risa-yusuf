@@ -286,3 +286,21 @@ var x = setInterval(function() {
     document.getElementById("countdown").innerHTML = "Countdown Telah Berakhir";
   }
 }, 1000);
+
+// Mengambil elemen inputan
+var inputData = document.getElementById("inputData");
+
+// Mengambil elemen hasil
+var hasilInputan = document.getElementById("hasilInputan");
+
+// Fungsi untuk menangani input dari pengguna
+function tampilkanInput() {
+  // Mengambil nilai dari inputan
+  var nilaiInput = inputData.value;
+
+  // Menampilkan nilai inputan di elemen hasil
+  hasilInputan.textContent = "Kepada Yth. " + nilaiInput;
+}
+
+// Menambahkan event listener untuk memanggil fungsi tampilkanInput() saat input berubah
+inputData.addEventListener("input", tampilkanInput);
